@@ -1,5 +1,5 @@
 ## Postgress
-To run the project locally:
+To run the postgress image in docker:
 ```bash
 go docker-compose up
 ```
@@ -32,4 +32,52 @@ CREATE TABLE users (
 );
 ```
 
+First example of how to insert info into the table
+```sql
+INSERT INTO users VALUE (1, 22, 'John', 'Smith', 'john@mail.com');
+```
 
+Second example of how to insert info into the table allows to skip some fields
+```sql
+INSERT INTO users (age, email, first_name, last_name)
+```
+```sql
+VALUES (30, 'bobby@mail.com', 'Bobby', 'Singer');
+```
+
+To see users in the table
+```sql
+SELECT * FROM users;
+```
+
+```sql
+SELECT id, email FROM users;
+```
+
+Filter results
+```sql
+SELECT * FROM users WHERE email='bobby@mail.com';
+```
+
+```sql
+SELECT * FROM users WHERE email='bobby@mail.com';
+```
+
+```sql
+SELECT * FROM users WHERE age > 22 OR last_name='Singer';
+```
+
+```sql
+SELECT * FROM users WHERE age > 22 AND last_name='Singer';
+```
+
+
+Update records
+```sql
+UPDATE users SET first_name='Johny' WHERE id=1;
+```
+
+Delete records
+```sql
+DELETE FROM users WHERE id=1;
+```
