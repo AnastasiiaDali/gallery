@@ -10,7 +10,7 @@ docker exec -it gallery-db-1 /usr/bin/psql -U baloo -d lenslocked
 to quit `control d`
 
 
-`DROP TABLE IF EXISTS users` <br>
+`DROP TABLE IF EXISTS users;` <br>
 `CREATE TABLE users (` <br>
 `id SERIAL,` <br>
 `age INT,` <br>
@@ -21,11 +21,14 @@ to quit `control d`
 
 
 ###Notes:
-Creating SQL tables
+Creating SQL table
 ```sql
-CREATE TABLE table_name (
-    field_name TYPE PRIMARY KEY,
-    field_name TYPE(args) CONTRANTS,
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    age INT,
+    first_name TEXT,
+    last_name TEXT,
+    email TEXT UNIQUE NOT NULL
 );
 ```
 
