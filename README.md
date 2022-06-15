@@ -81,3 +81,16 @@ Delete records
 ```sql
 DELETE FROM users WHERE id=1;
 ```
+
+
+###Bcrypt
+
+To hash the password
+```bash
+go run bcrypt/bcrypt.go hash "secret-password"
+```
+
+To compare the password (not matching)
+```bash
+go run bcrypt/bcrypt.go compare "secret-password" {put generated hash from previous command here in single quotes}
+```
